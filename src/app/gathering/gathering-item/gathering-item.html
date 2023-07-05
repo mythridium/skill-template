@@ -1,0 +1,45 @@
+<template id="myth-skill-template-gathering-item">
+    <div class="col-6 col-lg-3" :id="localId" @vue:mounted="mounted">
+        <div
+            class="block block-content block-content-full block-rounded-extra block-link-pop border-top border-gathering border-4x text-center"
+        >
+            <div class="row gutters-tiny">
+                <div class="col-12 p-2">
+                    <img class="gathering-img" :src="media" />
+                </div>
+
+                <div class="col-12 pt-2">
+                    <h4 class="font-w700 mb-2">{{ gatheringItemName }}</h4>
+                </div>
+
+                <div class="col-12 row justify-content-center gutters-tiny text-center" id="grants-container"></div>
+
+                <div class="col-12 p-2 mt-3">
+                    <div class="progress active mb-2 ml-2 mr-2" style="height: 15px">
+                        <div
+                            class="progress-bar bg-secondary progress-fast"
+                            id="progress-bar"
+                            role="progressbar"
+                            style="width: 0%"
+                            aria-valuenow="0"
+                            aria-valuemin="0"
+                            aria-valuemax="100"
+                        ></div>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <button class="btn btn-alt-success ml-3 mr-3 mb-3 mt-1" @click="train()">Train</button>
+                </div>
+
+                <div class="col-12">
+                    <mastery-display
+                        class="mastery-6"
+                        data-skill-id="mythSkillTemplate:Gathering"
+                        :data-action-id="id"
+                    ></mastery-display>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

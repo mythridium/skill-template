@@ -1,0 +1,22 @@
+$color: #e9b647;
+
+.bg-gathering {
+    background-color: $color;
+}
+
+.border-gathering,
+.border-Gathering {
+    border-color: $color !important;
+}
+
+.gathering-color {
+    color: $color;
+}
+
+.bg-gathering-50 {
+    background-color: #e9b6473d;
+}
+
+#gathering-item-container {
+    margin-top: 30px;
+}

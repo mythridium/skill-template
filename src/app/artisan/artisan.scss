@@ -1,0 +1,22 @@
+$color: #e9b647;
+
+.bg-artisan {
+    background-color: $color;
+}
+
+.border-artisan,
+.border-Artisan {
+    border-color: $color !important;
+}
+
+.artisan-color {
+    color: $color;
+}
+
+.bg-artisan-50 {
+    background-color: #e9b6473d;
+}
+
+#artisan-item-container {
+    margin-top: 30px;
+}

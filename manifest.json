@@ -1,0 +1,5 @@
+{
+    "namespace": "mythSkillTemplate",
+    "setup": "setup.mjs",
+    "icon": "assets/logo.png"
+}

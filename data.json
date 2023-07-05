@@ -1,0 +1,295 @@
+{
+    "$schema": "https://melvoridle.com/assets/schema/gameData.json",
+    "namespace": "mythSkillTemplate",
+    "data": {
+        "items": [
+            {
+                "itemType": "Item",
+                "id": "Artisan_Item_One",
+                "name": "Artisan Item One",
+                "category": "Artisan",
+                "type": "Misc",
+                "media": "assets/logo.png",
+                "ignoreCompletion": true,
+                "obtainFromItemLog": false,
+                "golbinRaidExclusive": false,
+                "sellsFor": 1
+            },
+            {
+                "itemType": "Item",
+                "id": "Artisan_Item_Two",
+                "name": "Artisan Item Two",
+                "category": "Artisan",
+                "type": "Misc",
+                "media": "assets/logo.png",
+                "ignoreCompletion": true,
+                "obtainFromItemLog": false,
+                "golbinRaidExclusive": false,
+                "sellsFor": 1
+            },
+            {
+                "id": "Mastery_Token_Gathering",
+                "name": "Mastery Token (Gathering)",
+                "category": "Mastery",
+                "type": "Token",
+                "media": "assets/mastery-token.png",
+                "ignoreCompletion": true,
+                "obtainFromItemLog": false,
+                "golbinRaidExclusive": false,
+                "sellsFor": 1500,
+                "itemType": "Token",
+                "modifiers": {
+                    "masteryToken": [
+                        {
+                            "skillID": "mythSkillTemplate:Gathering",
+                            "value": 0.1
+                        }
+                    ]
+                }
+            },
+            {
+                "id": "Mastery_Token_Artisan",
+                "name": "Mastery Token (Artisan)",
+                "category": "Mastery",
+                "type": "Token",
+                "media": "assets/mastery-token.png",
+                "ignoreCompletion": true,
+                "obtainFromItemLog": false,
+                "golbinRaidExclusive": false,
+                "sellsFor": 1500,
+                "itemType": "Token",
+                "modifiers": {
+                    "masteryToken": [
+                        {
+                            "skillID": "mythSkillTemplate:Artisan",
+                            "value": 0.1
+                        }
+                    ]
+                }
+            }
+        ],
+        "pages": [
+            {
+                "id": "Gathering",
+                "media": "assets/logo.png",
+                "containerID": "gathering-container",
+                "headerBgClass": "bg-gathering",
+                "hasGameGuide": false,
+                "canBeDefault": true,
+                "customName": "Gathering",
+                "action": "mythSkillTemplate:Gathering",
+                "skills": ["mythSkillTemplate:Gathering"]
+            },
+            {
+                "id": "Artisan",
+                "media": "assets/logo.png",
+                "containerID": "artisan-container",
+                "headerBgClass": "bg-artisan",
+                "hasGameGuide": false,
+                "canBeDefault": true,
+                "customName": "Artisan",
+                "action": "mythSkillTemplate:Artisan",
+                "skills": ["mythSkillTemplate:Artisan"]
+            }
+        ],
+        "pets": [
+            {
+                "id": "Gathering_Pet",
+                "name": "Gathering Pet",
+                "media": "assets/logo.png",
+                "ignoreCompletion": true,
+                "modifiers": {
+                    "decreasedSkillInterval": [
+                        {
+                            "skillID": "mythSkillTemplate:Gathering",
+                            "value": 100
+                        }
+                    ]
+                },
+                "activeInRaid": false,
+                "scaleChanceWithMasteryPool": true,
+                "skillID": "mythSkillTemplate:Gathering"
+            },
+            {
+                "id": "Artisan_Pet",
+                "name": "Artisan Pet",
+                "media": "assets/logo.png",
+                "ignoreCompletion": true,
+                "modifiers": {
+                    "decreasedSkillInterval": [
+                        {
+                            "skillID": "mythSkillTemplate:Artisan",
+                            "value": 100
+                        }
+                    ]
+                },
+                "activeInRaid": false,
+                "scaleChanceWithMasteryPool": true,
+                "skillID": "mythSkillTemplate:Artisan"
+            }
+        ],
+        "skillData": [
+            {
+                "skillID": "mythSkillTemplate:Gathering",
+                "data": {
+                    "pets": ["mythSkillTemplate:Gathering_Pet"],
+                    "rareDrops": [
+                        {
+                            "itemID": "melvorD:Gold_Topaz_Ring",
+                            "altItemID": "melvorD:Signet_Ring_Half_A",
+                            "quantity": 1,
+                            "requirements": [],
+                            "chance": {
+                                "type": "LevelScaling",
+                                "maxChance": 100,
+                                "baseChance": 0,
+                                "scalingFactor": 0.000006060606060606061
+                            }
+                        },
+                        {
+                            "itemID": "melvorD:Circlet_of_Rhaelyx",
+                            "quantity": 1,
+                            "requirements": [],
+                            "chance": {
+                                "type": "TotalMasteryScaling",
+                                "maxChance": 0.001,
+                                "baseChance": 0.00001,
+                                "scalingFactor": 4e-8
+                            }
+                        },
+                        {
+                            "itemID": "melvorD:Mysterious_Stone",
+                            "quantity": 1,
+                            "requirements": [
+                                {
+                                    "type": "ItemFound",
+                                    "itemID": "melvorD:Crown_of_Rhaelyx"
+                                }
+                            ],
+                            "chance": {
+                                "type": "Fixed",
+                                "chance": 0.025
+                            }
+                        }
+                    ],
+                    "minibar": {
+                        "defaultItems": [],
+                        "upgrades": [],
+                        "pets": ["mythSkillTemplate:Gathering_Pet"]
+                    },
+                    "masteryTokenID": "mythSkillTemplate:Mastery_Token_Gathering",
+                    "masteryLevelUnlocks": [
+                        {
+                            "level": "1",
+                            "description": "Mastery levels do something..."
+                        }
+                    ],
+                    "customGatheringData": [
+                        {
+                            "id": "Gathering_Item",
+                            "name": "Gathering Item",
+                            "productId": "mythSkillTemplate:Gathering_Item",
+                            "media": "assets/logo.png",
+                            "level": 1,
+                            "baseInterval": 3000,
+                            "baseExperience": 5
+                        }
+                    ]
+                }
+            },
+            {
+                "skillID": "mythSkillTemplate:Artisan",
+                "data": {
+                    "pets": ["mythSkillTemplate:Artisan_Pet"],
+                    "rareDrops": [
+                        {
+                            "itemID": "melvorD:Gold_Topaz_Ring",
+                            "altItemID": "melvorD:Signet_Ring_Half_A",
+                            "quantity": 1,
+                            "requirements": [],
+                            "chance": {
+                                "type": "LevelScaling",
+                                "maxChance": 100,
+                                "baseChance": 0,
+                                "scalingFactor": 0.000006060606060606061
+                            }
+                        },
+                        {
+                            "itemID": "melvorD:Circlet_of_Rhaelyx",
+                            "quantity": 1,
+                            "requirements": [],
+                            "chance": {
+                                "type": "TotalMasteryScaling",
+                                "maxChance": 0.001,
+                                "baseChance": 0.00001,
+                                "scalingFactor": 4e-8
+                            }
+                        },
+                        {
+                            "itemID": "melvorD:Mysterious_Stone",
+                            "quantity": 1,
+                            "requirements": [
+                                {
+                                    "type": "ItemFound",
+                                    "itemID": "melvorD:Crown_of_Rhaelyx"
+                                }
+                            ],
+                            "chance": {
+                                "type": "Fixed",
+                                "chance": 0.025
+                            }
+                        }
+                    ],
+                    "minibar": {
+                        "defaultItems": [],
+                        "upgrades": [],
+                        "pets": ["mythSkillTemplate:Artisan_Pet"]
+                    },
+                    "masteryTokenID": "mythSkillTemplate:Mastery_Token_Artisan",
+                    "masteryLevelUnlocks": [
+                        {
+                            "level": "1",
+                            "description": "Mastery levels do something..."
+                        }
+                    ],
+                    "categories": [
+                        {
+                            "id": "Category_One",
+                            "media": "assets/logo.png",
+                            "name": "Category One"
+                        },
+                        {
+                            "id": "Category_Two",
+                            "media": "assets/logo.png",
+                            "name": "Category Two"
+                        }
+                    ],
+                    "recipes": [
+                        {
+                            "id": "Artisan_Item_One",
+                            "level": 1,
+                            "productID": "mythSkillTemplate:Artisan_Item_One",
+                            "baseQuantity": 1,
+                            "baseExperience": 8,
+                            "categoryID": "mythSkillTemplate:Category_One",
+                            "itemCosts": [],
+                            "gpCost": 10,
+                            "scCost": 0
+                        },
+                        {
+                            "id": "Artisan_Item_Two",
+                            "level": 1,
+                            "productID": "mythSkillTemplate:Artisan_Item_Two",
+                            "baseQuantity": 1,
+                            "baseExperience": 8,
+                            "categoryID": "mythSkillTemplate:Category_Two",
+                            "itemCosts": [],
+                            "gpCost": 10,
+                            "scCost": 0
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}
