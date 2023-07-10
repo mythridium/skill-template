@@ -33,11 +33,6 @@ I have provided a blank mastery token, summoning mark and summoning tablet. Thes
 * run `npm run build` to run webpack, which compiles the TypeScript, bundles assets and zips the entire mod up into the `build` folder
 * you can now use the `Creator Toolkit` to add a local mod and select the zip file that is in the `build` folder
 
-## No HTML
-If your mod has NO HTML files for some reason, be sure to remove line 21 in `webpack.config.js` as you'll get an error building.
-
-`{ from: '**/*.html', to: '[path][name][ext]', context: 'src/app' },` this pattern is not needed without any HTML.
-
 ## SCSS
 
 Webpack automatically compiles scss to css and includes it in the output via importing the scss file into a TypeScript file.
